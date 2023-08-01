@@ -6,23 +6,23 @@
 ## To explore the hosted app, visit: https://themelting-pot.onrender.com
 
 # Technologies Used
-## Front-end
+### Front-end
 * The app's front-end is crafted using the latest web technologies, including CSS, JavaScript, and React. Leveraging React allowed us to create an efficient and responsive Single Page Application (SPA) for seamless user interactions.
 
-## Back-end
+### Back-end
 * For the back-end, we employed the powerful and scalable Node.js, which enables robust server-side functionalities.
 
-## Database
+### Database
 * The application utilizes MongoDB Atlas as the database, ensuring efficient data storage and retrieval for a seamless user experience.
 
-## Deployment 
+### Deployment 
 * To ensure an efficient deployment process, we utilized Render.com. It facilitated the deployment of our app by automatically creating dedicated pages for both the front-end and the back-end components. With Render.com, we were able to host and manage our MERN stack spa, providing a seamless user experience from end to end.
 
 # Features
-## Admin Login
+### Admin Login
 * We have implemented a secure administration feature that involves username and password validation, ensuring exclusive access to authorized personnel.
 
-## Create and Manage Items 
+### Create and Manage Items 
 * The app empowers users with the ability to create, edit, and delete food items. Moreover, users can easily add these items to a cart and even include multiple items in a single order for a convenient checkout process.
 
 # Languages and Frameworks
