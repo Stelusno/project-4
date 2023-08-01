@@ -6,7 +6,7 @@ module.exports = {
     show,
     create,
     edit,
-    deleteItem,
+    deleteOrder,
 }
 
 async function index(req, res) {
@@ -67,7 +67,7 @@ async function create(req, res) {
 }
 
 async function edit(req, res) {
-    const id = req.params.itemId;
+    const id = req.params.orderId;
     try {
         const order = await Order.findByIdAndUpdate(id, req.body);
         res.status(202).json(order);
@@ -76,8 +76,8 @@ async function edit(req, res) {
     }
 }
 
-async function deleteItem(req, res) {
-    const id = req.params.itemId;
+async function deleteOrder(req, res) {
+    const id = req.params.orderId;
     try {
         const response = await Order.findByIdAndDelete(id);
         res.status(204).json(response);
