@@ -66,7 +66,6 @@ DELETE  | /items/:itemsId| Delete a menu item |
 
 # Next Steps 
 
-## Add bullets to readme
 
-## Feel free to explore and enjoy the diverse culinary options available at The Melting Pot app!
+# Feel free to explore and enjoy the diverse culinary options available at The Melting Pot app!
 
