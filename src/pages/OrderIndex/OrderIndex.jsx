@@ -10,8 +10,8 @@ import Order from '../../component/Order/Order'
 
 export default function OrderIndex({ orders, setOrders }) {
 	const [orderDetail, setOrderDetail] = useState({});
-    // const URL = 'http://localhost:3001'
-    const URL = 'https://themeltingpot-07h3.onrender.com'
+    const URL = 'http://localhost:3001'
+    // const URL = 'https://themeltingpot-07h3.onrender.com'
 
     async function getOrderDetails(order) {
 		try {

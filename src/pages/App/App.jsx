@@ -29,8 +29,8 @@ export default function App() {
 	const [cart, setCart] = useState(defaultCart);
 
 
-	// const URL = 'http://localhost:3001';
-	const URL = 'https://themeltingpot-07h3.onrender.com'
+	const URL = 'http://localhost:3001';
+	// const URL = 'https://themeltingpot-07h3.onrender.com'
 
 	async function getItems() {
 		try {
