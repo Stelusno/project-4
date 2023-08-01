@@ -89,6 +89,13 @@ export default function App() {
 		setCart([...cart, addedItem]);
 	}
 
+	function handleRemoveFromCart(deletedItem) {
+		const idx = cart.findIndex((cartItem) => cartItem === deletedItem);
+		const updatedItems = [...cart]
+		updatedItems.splice(idx, 1);
+		setCart(updatedItems);
+	}
+
 	async function handleCreateOrder(cart) {
 		const data = {
 			cartItems: cart,
@@ -136,7 +143,7 @@ export default function App() {
 						<Route path='/' element={<Home items={items} handleAddToCart={handleAddToCart} />} />
 						<Route path='/orders' element={<OrderIndex orders={orders} setOrders={setOrders} />} />
 						<Route path='/orders/:orderId' element={<OrderItem />} />
-						<Route path='/cart' element={<CartPage handleCreateOrder={handleCreateOrder} cart={cart} />} />
+						<Route path='/cart' element={<CartPage handleCreateOrder={handleCreateOrder} cart={cart} handleRemoveFromCart={handleRemoveFromCart} />} />
 					</Routes>
 				</>
 			</main>
