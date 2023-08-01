@@ -1,0 +1,11 @@
+.OrderItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+    background-color: white;
+    height: 300px;
+    width: 350px;
+    border-radius: 15px;
+}
