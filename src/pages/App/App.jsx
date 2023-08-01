@@ -98,7 +98,6 @@ export default function App() {
 		try {
 			const response = await axios.post(`${URL}/api/orders/`, data);
 			const newOrder = response.data.order;
-			console.log(newOrder);
 			setOrders([...orders, newOrder]);
 			setCart(defaultCart);
 		} catch (err) {
