@@ -8,12 +8,15 @@ import Item from '../../component/Item/Item';
 import ItemIndex from '../../component/ItemIndex/ItemIndex';
 import OrderIndex from '../../pages/OrderIndex/OrderIndex';
 import OrderItem from '../../component/OrderItem/OrderItem';
-import LoginPage from '../../component/LoginPage/LoginPage'
+import LoginPage from '../../component/LoginPage/LoginPage';
+import CartPage from '../../pages/CartPage/CartPage';
 import Home from '../../pages/Home/Home';
 import Admin from '../../pages/Admin/Admin';
 
 import { Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react';
+
+
 
 export default function App() {
 	const [items, setItems] = useState([]);
@@ -21,10 +24,18 @@ export default function App() {
 
 	const [user, setUser] = useState(null);
 
+
+	const defaultCart = [];
+	const [cart, setCart] = useState(defaultCart);
+
+
+	const URL = 'http://localhost:3001';
+	// const URL = 'https://themeltingpot-07h3.onrender.com'
+
 	async function getItems() {
 		try {
-			const response = await axios.get('https://themeltingpot-07h3.onrender.com/api/items/');
-			setItems(response.data);
+			const response = await axios.get(`${URL}/api/items/`);
+			setItems(response.data, 'herer');
 		} catch (err) {
 			console.log(err);
 		}
@@ -32,7 +43,7 @@ export default function App() {
 
 	async function getOrders() {
 		try {
-			const response = await axios.get('https://themeltingpot-07h3.onrender.com/api/orders/');
+			const response = await axios.get(`${URL}/api/orders/`);
 			setOrders(response.data);
 		} catch (err) {
 			console.log(err);
@@ -41,7 +52,7 @@ export default function App() {
 
 	async function handleCreate(createdItem) {
 		try {
-			const response = await axios.post('https://themeltingpot-07h3.onrender.com/api/items/', createdItem);
+			const response = await axios.post(`${URL}/api/items/`, createdItem);
 			setItems([...items, response.data]);
 		} catch (err) {
 			console.log(err);
@@ -55,8 +66,8 @@ export default function App() {
 
 	async function handleDelete(deletedItem) {
 		try {
-			await axios.delete(`https://themeltingpot-07h3.onrender.com/api/items/${deletedItem._id}/`);
-			const notDeletedItems = items.filter(item => item._id !== deletedItem._id)
+			await axios.delete(`${URL}/api/items/${deletedItem._id}/`);
+			const notDeletedItems = items.filter(item => item._id !== deletedItem._id);
 			setItems(notDeletedItems);
 		} catch (err) {
 			console.log(err);
@@ -65,7 +76,7 @@ export default function App() {
 
 	async function handleEdit(editedItem) {
 		try {
-			await axios.put(`https://themeltingpot-07h3.onrender.com/api/items/${editedItem._id}/`, editedItem);
+			await axios.put(`${URL}/api/items/${editedItem._id}/`, editedItem);
 			const newItems = items.map(i => {
 				return i._id !== editedItem._id ? i : editedItem;
 			});
@@ -74,16 +85,57 @@ export default function App() {
 			console.log(err);
 		}
 	}
-	
+
+	function handleAddToCart(addedItem) {
+		setCart([...cart, addedItem]);
+	}
+
+	function handleRemoveFromCart(deletedItem) {
+		const idx = cart.findIndex((cartItem) => cartItem === deletedItem);
+		const updatedItems = [...cart]
+		updatedItems.splice(idx, 1);
+		setCart(updatedItems);
+	}
+
+	async function handleCreateOrder(cart) {
+		const data = {
+			cartItems: cart,
+			username: user,
+			isDelivery: false,
+		}
+		try {
+			const response = await axios.post(`${URL}/api/orders/`, data);
+			const newOrder = response.data.order;
+			setOrders([...orders, newOrder]);
+			setCart(defaultCart);
+		} catch (err) {
+			console.log(err);
+		}
+	}
+
+	async function handleDeleteOrder(order) {
+		const id = order._id
+		try {
+			await axios.delete(`${URL}/api/orders/${id}`);
+			const NotDeletedOrders = orders.filter(o => o._id != id);
+			setOrders(NotDeletedOrders);
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
+
 	if (user === 'admin123') {
-		return(
+		return (
 			<main className="App">
 				<>
 					<Routes>
 						{/* <Route path='/' element={<Menu items={items} />} /> */}
 						<Route path='/' element={
 							<>
+
 								<Admin handleCreate={handleCreate} items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>
+                  
 							</>}>
 						</Route>
 					</Routes>
@@ -91,19 +143,20 @@ export default function App() {
 			</main>
 		);
 	} else if (!user) {
-		return(
+		return (
 			<main className="App">
 				<LoginPage setUser={setUser} />
 			</main>
 		);
 	} else {
-		return(
+		return (
 			<main className="App">
 				<>
 					<Routes>
-						<Route path='/' element={<Home items={items} />} />
+						<Route path='/' element={<Home items={items} handleAddToCart={handleAddToCart} />} />
 						<Route path='/orders' element={<OrderIndex orders={orders} setOrders={setOrders} />} />
-						<Route path='/orders/:orderId' element={<OrderItem />}/>
+						<Route path='/orders/:orderId' element={<OrderItem handleDeleteOrder={handleDeleteOrder} />} />
+						<Route path='/cart' element={<CartPage handleCreateOrder={handleCreateOrder} cart={cart} handleRemoveFromCart={handleRemoveFromCart} />} />
 					</Routes>
 				</>
 			</main>
