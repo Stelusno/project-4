@@ -1,6 +1,9 @@
 import { useState, Fragment } from 'react';
 import Item from '../../component/Item/Item';
 import CartItem from '../../component/CartItem/CartItem';
+import NavBar from '../../component/NavBar/NavBar';
+import Header from '../../component/Header/Header';
+import './CartPage.css';
 
 export default function CartPage({ cart, handleCreateOrder, handleRemoveFromCart }) {
 
@@ -20,14 +23,21 @@ export default function CartPage({ cart, handleCreateOrder, handleRemoveFromCart
 	});
 
 	return (
-		<>
-			{allCartItems}
+		<div className='CartPage'>
+			<NavBar />
+        	<Header />
+			<div className='CartArea'>
+				<h2>Cart</h2>
+				<div className='CartItems'>
+					{allCartItems}
+				</div>
+			</div>
 			{
 				cart.length === 0 ?
-					<button>No items</button>
+					<button><h2 id='cartempty'>Cart Empty</h2></button>
 					:
 					<button id="cart" onClick={handleSubmit}>Place Order</button>
 			}
-		</>
+		</div>
 	);
 }
