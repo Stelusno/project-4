@@ -34,7 +34,7 @@ export default function App() {
 	async function getItems() {
 		try {
 			const response = await axios.get(`${URL}/api/items/`);
-			setItems(response.data);
+			setItems(response.data, 'herer');
 		} catch (err) {
 			console.log(err);
 		}
@@ -112,6 +112,18 @@ export default function App() {
 		}
 	}
 
+	async function handleDeleteOrder(order) {
+		const id = order._id
+		try {
+			await axios.delete(`${URL}/api/orders/${id}`);
+			const NotDeletedOrders = orders.filter(o => o._id != id);
+			setOrders(NotDeletedOrders);
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
+
 	if (user === 'admin123') {
 		return (
 			<main className="App">
@@ -142,7 +154,7 @@ export default function App() {
 					<Routes>
 						<Route path='/' element={<Home items={items} handleAddToCart={handleAddToCart} />} />
 						<Route path='/orders' element={<OrderIndex orders={orders} setOrders={setOrders} />} />
-						<Route path='/orders/:orderId' element={<OrderItem />} />
+						<Route path='/orders/:orderId' element={<OrderItem handleDeleteOrder={handleDeleteOrder} />} />
 						<Route path='/cart' element={<CartPage handleCreateOrder={handleCreateOrder} cart={cart} handleRemoveFromCart={handleRemoveFromCart} />} />
 					</Routes>
 				</>

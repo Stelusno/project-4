@@ -10,7 +10,7 @@ export default function Order({ order, orderDetail, getOrderDetails }) {
 
 	const data = orderDetail;
 	return (
-		<>
+		<Fragment key={`order_${order._id}`}>
 			<Link to={`/orders/${order._id}`} state={{data}}>
 				<div className='CartArea'>
 					<h2>{order.username}</h2>
@@ -19,6 +19,6 @@ export default function Order({ order, orderDetail, getOrderDetails }) {
 					<div className='Cart'></div>
 				</div>
 			</Link>
-		</>
+		</Fragment>
 	);
 }
