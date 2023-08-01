@@ -33,10 +33,15 @@ export default function OrderIndex({ orders, setOrders }) {
     )
 
     return(
-    <div className="Home">
+    <div className="OrderIndex">
         <NavBar />
         <Header />
-        {allOrders}
+        <div className='OrderArea'>
+            <h2>Orders</h2>
+            <div className='Orders'>
+                {allOrders}
+            </div>
+        </div>
     </div>
     )
 }

@@ -12,10 +12,10 @@ export default function Order({ order, orderDetail, getOrderDetails }) {
 	return (
 		<Fragment key={`order_${order._id}`}>
 			<Link to={`/orders/${order._id}`} state={{data}}>
-				<div className='CartArea'>
-					<h2>{order.username}</h2>
-					<h2>{order.price}</h2>
-					<h2>{order.isPaid}</h2>
+				<div className='OrderItem'>
+					<h2 id="user">Name: {order.username}</h2>
+					<h2 id="pr">Price: {order.price}</h2>
+					<h2 id="paid">Paid: {order.isPaid}</h2>
 					<div className='Cart'></div>
 				</div>
 			</Link>
