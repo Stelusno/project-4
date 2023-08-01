@@ -64,7 +64,8 @@ DELETE  | /items/:itemsId| Delete a menu item |
 ## Inputting address and information into the deliveries.
 ## Sorting item info based on nationality.
 
-# NextSteps 
+# Next Steps 
+
 ## Add bullets to readme
 
 ## Feel free to explore and enjoy the diverse culinary options available at The Melting Pot app!
