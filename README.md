@@ -7,26 +7,26 @@
 
 # Technologies Used
 ## Front-end
-### The app's front-end is crafted using the latest web technologies, including CSS, JavaScript, and React. Leveraging React allowed us to create an efficient and responsive Single Page Application (SPA) for seamless user interactions.
+* The app's front-end is crafted using the latest web technologies, including CSS, JavaScript, and React. Leveraging React allowed us to create an efficient and responsive Single Page Application (SPA) for seamless user interactions.
 
 ## Back-end
-### For the back-end, we employed the powerful and scalable Node.js, which enables robust server-side functionalities.
+* For the back-end, we employed the powerful and scalable Node.js, which enables robust server-side functionalities.
 
 ## Database
-### The application utilizes MongoDB Atlas as the database, ensuring efficient data storage and retrieval for a seamless user experience.
+* The application utilizes MongoDB Atlas as the database, ensuring efficient data storage and retrieval for a seamless user experience.
 
 ## Deployment 
-### To ensure an efficient deployment process, we utilized Render.com. It facilitated the deployment of our app by automatically creating dedicated pages for both the front-end and the back-end components. With Render.com, we were able to host and manage our MERN stack spa, providing a seamless user experience from end to end.
+* To ensure an efficient deployment process, we utilized Render.com. It facilitated the deployment of our app by automatically creating dedicated pages for both the front-end and the back-end components. With Render.com, we were able to host and manage our MERN stack spa, providing a seamless user experience from end to end.
 
 # Features
 ## Admin Login
-### We have implemented a secure administration feature that involves username and password validation, ensuring exclusive access to authorized personnel.
+* We have implemented a secure administration feature that involves username and password validation, ensuring exclusive access to authorized personnel.
 
 ## Create and Manage Items 
-### The app empowers users with the ability to create, edit, and delete food items. Moreover, users can easily add these items to a cart and even include multiple items in a single order for a convenient checkout process.
+* The app empowers users with the ability to create, edit, and delete food items. Moreover, users can easily add these items to a cart and even include multiple items in a single order for a convenient checkout process.
 
 # Languages and Frameworks
-## The project was meticulously developed using JavaScript and React, enabling the creation of an intuitive Single Page Application. CSS was skillfully employed to style the app, utilizing classes and ids to craft an appealing user interface. MongoDB Atlas was integrated as the database, providing efficient and reliable data management.
+* The project was meticulously developed using JavaScript and React, enabling the creation of an intuitive Single Page Application. CSS was skillfully employed to style the app, utilizing classes and ids to craft an appealing user interface. MongoDB Atlas was integrated as the database, providing efficient and reliable data management.
 
 ## Method | Path  | Purpose | Note
 -----------|------------------|------------------|:---:
