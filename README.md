@@ -58,11 +58,11 @@ DELETE  | /items/:itemsId| Delete a menu item |
 * AAU I want to be able to remove the food item if I change my mind.
 
 # Stretch Goals 
-## Create a better one to many relation using MongoDB
-## Create additional components to seperate functionality data for different models. 
-## Create functoinality to add up total amount and quantity in cart. 
-## Inputting address and information into the deliveries.
-## Sorting item info based on nationality.
+* Create a better one to many relation using MongoDB
+* Create additional components to seperate functionality data for different models. 
+* Create functoinality to add up total amount and quantity in cart. 
+* Inputting address and information into the deliveries.
+* Sorting item info based on nationality.
 
 # Next Steps 
 
