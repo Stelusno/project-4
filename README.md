@@ -19,7 +19,7 @@
 ### To ensure an efficient deployment process, we utilized Render.com. It facilitated the deployment of our app by automatically creating dedicated pages for both the front-end and the back-end components. With Render.com, we were able to host and manage our MERN stack spa, providing a seamless user experience from end to end.
 
 # Features
-## Admin Loign
+## Admin Login
 ### We have implemented a secure administration feature that involves username and password validation, ensuring exclusive access to authorized personnel.
 
 ## Create and Manage Items 
