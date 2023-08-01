@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# The Melting Pot
+## Introduction
+## The Melting Pot is an innovative restaurant app designed to offer a diverse range of food options and a delightful culinary experience for individuals with a sophisticated palate.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Hosted App
+## To explore the hosted app, visit: https://themelting-pot.onrender.com
 
-## Available Scripts
+# Technologies Used
+## Front-end
+### The app's front-end is crafted using the latest web technologies, including CSS, JavaScript, and React. Leveraging React allowed us to create an efficient and responsive Single Page Application (SPA) for seamless user interactions.
 
-In the project directory, you can run:
+## Back-end
+### For the back-end, we employed the powerful and scalable Node.js, which enables robust server-side functionalities.
 
-### `npm start`
+## Database
+### The application utilizes MongoDB Atlas as the database, ensuring efficient data storage and retrieval for a seamless user experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Deployment 
+### To ensure an efficient deployment process, we utilized Render.com. It facilitated the deployment of our app by automatically creating dedicated pages for both the front-end and the back-end components. With Render.com, we were able to host and manage our MERN stack spa, providing a seamless user experience from end to end.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Features
+## Admin Loign
+### We have implemented a secure administration feature that involves username and password validation, ensuring exclusive access to authorized personnel.
 
-### `npm test`
+## Create and Manage Items 
+### The app empowers users with the ability to create, edit, and delete food items. Moreover, users can easily add these items to a cart and even include multiple items in a single order for a convenient checkout process.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Languages and Frameworks
+## The project was meticulously developed using JavaScript and React, enabling the creation of an intuitive Single Page Application. CSS was skillfully employed to style the app, utilizing classes and ids to craft an appealing user interface. MongoDB Atlas was integrated as the database, providing efficient and reliable data management.
 
-### `npm run build`
+## Method | Path  | Purpose | Note
+-----------|------------------|------------------|:---:
+GET     | /items | | View all menu items 
+GET     | /items/:itemsId | View one item on menu| 
+PUT     | /items/:itemsId/edit | Edit menu items|
+POST    | / | Add a new menu item |
+DELETE  | /items/:itemsId| Delete a menu item |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Method | Path  | Purpose | Note
+-----------|------------------|------------------|:---:
+GET     | /items | | View all menu items 
+GET     | /items/:itemsId | View one item on menu| 
+PUT     | /items/:itemsId/edit | Edit menu items|
+POST    | / | Add a new menu item |
+DELETE  | /items/:itemsId| Delete a menu item |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Method | Path  | Purpose | Note
+-----------|------------------|------------------|:---:
+GET     | /items | | View all menu items 
+GET     | /items/:itemsId | View one item on menu| 
+PUT     | /items/:itemsId/edit | Edit menu items|
+POST    | / | Add a new menu item |
+DELETE  | /items/:itemsId| Delete a menu item |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# User Story
+## AAU I would like to view the menu. I would like to navigate to the different food options. 
+## AAU I would want to be able to choose my preferred food item and add it to checkout. 
+## AAU I want to be able to remove the food item if I change my mind.
 
-### `npm run eject`
+# Stretch Goals 
+## Create a better one to many relation using MongoDB
+## Create additional components to seperate functionality data for different models. 
+## Create functoinality to add up total amount and quantity in cart. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Feel free to explore and enjoy the diverse culinary options available at The Melting Pot app!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
