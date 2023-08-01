@@ -1,44 +1,33 @@
-import {useState} from 'react'
+import { useState, Fragment } from 'react';
+import Item from '../../component/Item/Item';
+import CartItem from '../../component/CartItem/CartItem';
 
-const CartPage = ({ handleCreateOrder }) => {
-    
+export default function CartPage({ cart, handleCreateOrder, handleRemoveFromCart }) {
 
-    const handleChange = (event) => {
-        setItem({...item, [event.target.name]: event.target.value})
-    }
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		handleCreateOrder(cart);
+	};
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        handleCreate(item)
-    }
+	const allCartItems = cart.map(item => {
+		const rand = Math.floor(Math.random() * 100000000)
+		return (
+			<Fragment key={`${item._id}/${rand}`}>
+				<CartItem item={item} handleRemoveFromCart={handleRemoveFromCart} />
+				<hr />
+			</Fragment>
+		);
+	});
 
-    return (
-        <>
-            <h1>ADD ITEM</h1>
-            <form onSubmit={handleSubmit}>
-                <input type='text' placeholder='title' name='title' onChange={handleChange} />
-                <br />
-                <br />
-                <input type='text' placeholder='description' name='description' onChange={handleChange} />
-                <br />
-                <br />
-                <input type='number' name='price' onChange={handleChange} />
-                <br />
-                <br />
-                <select name='category' onChange={handleChange}>
-                    <option value="Italian">Italian</option>
-                    <option value="Mexican">Mexican</option>
-                    <option value="American">American</option>
-                </select>
-                <br />
-                <br />
-                <input type='text' placeholder='image'name='img' onChange={handleChange} />
-                <br />
-                <br />
-                <input type='submit' />
-            </form>
-        </>
-    )
+	return (
+		<>
+			{allCartItems}
+			{
+				cart.length === 0 ?
+					<button>No items</button>
+					:
+					<button id="cart" onClick={handleSubmit}>Place Order</button>
+			}
+		</>
+	);
 }
-
-export default Add

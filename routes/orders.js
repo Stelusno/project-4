@@ -6,7 +6,7 @@ const orderController = require('../controllers/orders');
 router.get('/', orderController.index);
 router.get('/:orderId', orderController.show);
 
-router.delete('/:orderId', orderController.deleteItem);
+router.delete('/:orderId', orderController.deleteOrder);
 
 router.put('/:orderId', orderController.edit);
 
