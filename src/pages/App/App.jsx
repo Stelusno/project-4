@@ -14,15 +14,25 @@ import Home from '../../pages/Home/Home';
 import { Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react';
 
+
+
 export default function App() {
 	const [items, setItems] = useState([]);
 	const [orders, setOrders] = useState([]);
 
 	const [user, setUser] = useState(null);
+	
+	
+	const defaultCart = []
+    const [cart, setCart] = useState(defaultCart)
+
+
+	const URL = 'http://localhost:3001'
+	// const URL = 'https://themeltingpot-07h3.onrender.com'
 
 	async function getItems() {
 		try {
-			const response = await axios.get('https://themeltingpot-07h3.onrender.com/api/items/');
+			const response = await axios.get(`${URL}/api/items/`);
 			setItems(response.data);
 		} catch (err) {
 			console.log(err);
@@ -31,7 +41,7 @@ export default function App() {
 
 	async function getOrders() {
 		try {
-			const response = await axios.get('https://themeltingpot-07h3.onrender.com/api/orders/');
+			const response = await axios.get(`${URL}/api/orders/`);
 			setOrders(response.data);
 		} catch (err) {
 			console.log(err);
@@ -40,7 +50,7 @@ export default function App() {
 
 	async function handleCreate(createdItem) {
 		try {
-			const response = await axios.post('https://themeltingpot-07h3.onrender.com/api/items/', createdItem);
+			const response = await axios.post(`${URL}/api/items/`, createdItem);
 			setItems([...items, response.data]);
 		} catch (err) {
 			console.log(err);
@@ -54,7 +64,7 @@ export default function App() {
 
 	async function handleDelete(deletedItem) {
 		try {
-			await axios.delete(`https://themeltingpot-07h3.onrender.com/api/items/${deletedItem._id}/`);
+			await axios.delete(`${URL}/api/items/${deletedItem._id}/`);
 			const notDeletedItems = items.filter(item => item._id !== deletedItem._id)
 			setItems(notDeletedItems);
 		} catch (err) {
@@ -64,7 +74,7 @@ export default function App() {
 
 	async function handleEdit(editedItem) {
 		try {
-			await axios.put(`https://themeltingpot-07h3.onrender.com/api/items/${editedItem._id}/`, editedItem);
+			await axios.put(`${URL}/api/items/${editedItem._id}/`, editedItem);
 			const newItems = items.map(i => {
 				return i._id !== editedItem._id ? i : editedItem;
 			});
@@ -72,6 +82,11 @@ export default function App() {
 		} catch (err) {
 			console.log(err);
 		}
+	}
+
+	function handleAddToCart(addedItem) {
+		console.log(cart, addedItem);
+		setCart([...cart, addedItem]);
 	}
 	
 	if (user === 'admin123') {
@@ -102,7 +117,7 @@ export default function App() {
 			<main className="App">
 				<>
 					<Routes>
-						<Route path='/' element={<Home items={items} />} />
+						<Route path='/' element={<Home items={items} handleAddToCart={handleAddToCart} />} />
 						<Route path='/orders' element={<OrderIndex orders={orders} setOrders={setOrders} />} />
 						<Route path='/orders/:orderId' element={<OrderItem />}/>
 					</Routes>

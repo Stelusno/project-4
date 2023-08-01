@@ -5,7 +5,8 @@ const logger = require('morgan');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: "https://themelting-pot.onrender.com", // frontend URI (ReactJS)
+    // origin: "https://themelting-pot.onrender.com", // frontend URI (ReactJS)
+    origin: "*", // frontend URI (ReactJS)
 }
 
 require('dotenv').config();
@@ -17,6 +18,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(cors(corsOptions))
+// app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 
