@@ -18,6 +18,7 @@ const Add = ({ handleCreate }) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         handleCreate(item)
+        setItem(defaultItem)
     }
 
     return (
