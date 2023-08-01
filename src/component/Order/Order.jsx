@@ -15,7 +15,9 @@ export default function Order({ order, orderDetail, getOrderDetails }) {
 				<div className='OrderItem'>
 					<h2 id="user">Name: {order.username}</h2>
 					<h2 id="pr">Price: {order.price}</h2>
-					<h2 id="paid">Paid: {order.isPaid}</h2>
+					<h2 id="paid">Paid: {
+						order.isPaid == true ? 'True' : 'False'
+					}</h2>
 					<div className='Cart'></div>
 				</div>
 			</Link>

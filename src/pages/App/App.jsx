@@ -35,7 +35,7 @@ export default function App() {
 	async function getItems() {
 		try {
 			const response = await axios.get(`${URL}/api/items/`);
-			setItems(response.data, 'herer');
+			setItems(response.data);
 		} catch (err) {
 			console.log(err);
 		}
