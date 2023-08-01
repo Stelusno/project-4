@@ -10,6 +10,7 @@ import OrderIndex from '../../pages/OrderIndex/OrderIndex';
 import OrderItem from '../../component/OrderItem/OrderItem';
 import LoginPage from '../../component/LoginPage/LoginPage'
 import Home from '../../pages/Home/Home';
+import Admin from '../../pages/Admin/Admin';
 
 import { Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react';
@@ -78,13 +79,11 @@ export default function App() {
 		return(
 			<main className="App">
 				<>
-					<NavBar />
 					<Routes>
 						{/* <Route path='/' element={<Menu items={items} />} /> */}
 						<Route path='/' element={
 							<>
-								<AddItem handleCreate={handleCreate} />
-								<ItemIndex items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>
+								<Admin handleCreate={handleCreate} items={items} handleEdit={handleEdit} handleDelete={handleDelete}/>
 							</>}>
 						</Route>
 					</Routes>
