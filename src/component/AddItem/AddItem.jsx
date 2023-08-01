@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import './AddItem.css'
 
 const Add = ({ handleCreate }) => {
     const defaultItem = {
@@ -23,27 +24,27 @@ const Add = ({ handleCreate }) => {
     return (
         <>
             <h1>ADD ITEM</h1>
-            <form onSubmit={handleSubmit}>
-                <input type='text' placeholder='title' name='title' onChange={handleChange} />
+            <form className="AddItem" onSubmit={handleSubmit}>
+                <input className="AddItem" type='text' placeholder='title' name='title' onChange={handleChange} />
                 <br />
                 <br />
-                <input type='text' placeholder='description' name='description' onChange={handleChange} />
+                <input className="AddItem" type='text' placeholder='description' name='description' onChange={handleChange} />
                 <br />
                 <br />
-                <input type='number' name='price' onChange={handleChange} />
+                <input className="AddItem" type='number' name='price' onChange={handleChange} />
                 <br />
                 <br />
-                <select name='category' onChange={handleChange}>
+                <select id="select" name='category' onChange={handleChange}>
                     <option value="Italian">Italian</option>
                     <option value="Mexican">Mexican</option>
                     <option value="American">American</option>
                 </select>
                 <br />
                 <br />
-                <input type='text' placeholder='image'name='img' onChange={handleChange} />
+                <input className="AddItem" type='text' placeholder='image'name='img' onChange={handleChange} />
                 <br />
                 <br />
-                <input type='submit' />
+                <input className="AddItem" type='submit' />
             </form>
         </>
     )
