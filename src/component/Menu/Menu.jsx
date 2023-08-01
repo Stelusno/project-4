@@ -2,11 +2,11 @@ import Item from '../../component/Item/Item';
 import { Fragment } from 'react';
 import './Menu.css';
 
-export default function Menu({ items, handleAddToCart }) {
+export default function Menu({ items, handleAddToCart,handleCreateOrder, cart }) {
     const allItems = items.map(item => {
         return (
                 <Fragment key={item._id}>
-                    <Item item={item} handleAddToCart={handleAddToCart} />
+                    <Item item={item} handleAddToCart={handleAddToCart} handleCreateOrder={handleCreateOrder} cart={cart} />
                 </Fragment>
         );
     });

@@ -1,44 +1,30 @@
-import {useState} from 'react'
+import { useState, Fragment } from 'react';
+import Item from '../../component/Item/Item';
 
-const CartPage = ({ handleCreateOrder }) => {
-    
+export default function CartPage({ cart, handleCreateOrder }) {
 
-    const handleChange = (event) => {
-        setItem({...item, [event.target.name]: event.target.value})
-    }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        handleCreate(item)
-    }
+	// const handleChange = (event) => {
+	//     setItem({...item, [event.target.name]: event.target.value})
+	// }
 
-    return (
-        <>
-            <h1>ADD ITEM</h1>
-            <form onSubmit={handleSubmit}>
-                <input type='text' placeholder='title' name='title' onChange={handleChange} />
-                <br />
-                <br />
-                <input type='text' placeholder='description' name='description' onChange={handleChange} />
-                <br />
-                <br />
-                <input type='number' name='price' onChange={handleChange} />
-                <br />
-                <br />
-                <select name='category' onChange={handleChange}>
-                    <option value="Italian">Italian</option>
-                    <option value="Mexican">Mexican</option>
-                    <option value="American">American</option>
-                </select>
-                <br />
-                <br />
-                <input type='text' placeholder='image'name='img' onChange={handleChange} />
-                <br />
-                <br />
-                <input type='submit' />
-            </form>
-        </>
-    )
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		handleCreateOrder(cart);
+	};
+
+	const allCartItems = cart.map(item => {
+		return (
+			<Fragment key={item._id}>
+				<Item item={item} />
+				<hr />
+			</Fragment>
+		);
+	});
+
+	return (
+		<>
+			{allCartItems}
+		</>
+	);
 }
-
-export default Add
