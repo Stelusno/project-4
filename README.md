@@ -61,6 +61,8 @@ DELETE  | /items/:itemsId| Delete a menu item |
 ## Create a better one to many relation using MongoDB
 ## Create additional components to seperate functionality data for different models. 
 ## Create functoinality to add up total amount and quantity in cart. 
+## Inputting address and information into the deliveries.
+## Sorting item info based on nationality.
 
 ## Feel free to explore and enjoy the diverse culinary options available at The Melting Pot app!
 
