@@ -30,8 +30,7 @@
 
 ## Method | Path  | Purpose | Note
 -----------|------------------|------------------|:---:
-GET     | /items | | View all menu items 
-GET     | /items/:itemsId | View one item on menu| 
+GET     | /items | | View all menu items |
 PUT     | /items/:itemsId/edit | Edit menu items|
 POST    | / | Add a new menu item |
 DELETE  | /items/:itemsId| Delete a menu item |
