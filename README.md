@@ -10,7 +10,7 @@
 * The app's front-end is crafted using the latest web technologies, including CSS, JavaScript, and React. Leveraging React allowed us to create an efficient and responsive Single Page Application (SPA) for seamless user interactions.
 
 ### Back-end
-* For the back-end, we employed the powerful and scalable Express.js, which enables robust server-side functionalities.
+* For the back-end, we employed the powerful and scalable Node.js, which enables robust server-side functionalities.
 
 ### Database
 * The application utilizes MongoDB Atlas as the database, ensuring efficient data storage and retrieval for a seamless user experience.
