@@ -28,16 +28,9 @@
 # Languages and Frameworks
 * The project was meticulously developed using JavaScript and React, enabling the creation of an intuitive Single Page Application. CSS was skillfully employed to style the app, utilizing classes and ids to craft an appealing user interface. MongoDB Atlas was integrated as the database, providing efficient and reliable data management.
 
-## Method | Path  | Purpose | Note
------------|------------------|------------------|:---:
-GET     | /items | | View all menu items |
-PUT     | /items/:itemsId/edit | Edit menu items|
-POST    | / | Add a new menu item |
-DELETE  | /items/:itemsId| Delete a menu item |
-
 # User Story
-* AAU I would like to view the menu. I would like to navigate to the different food options. 
-* AAU I would want to be able to choose my preferred food item and add it to checkout. 
+* AAU I would like to view the menu. I would like to navigate the different food options. 
+* AAU I would want to be able to choose my preferred food item and add it to a cart. 
 * AAU I want to be able to remove the food item if I change my mind.
 
 # Stretch Goals 
