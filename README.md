@@ -36,22 +36,6 @@ PUT     | /items/:itemsId/edit | Edit menu items|
 POST    | / | Add a new menu item |
 DELETE  | /items/:itemsId| Delete a menu item |
 
-## Method | Path  | Purpose | Note
------------|------------------|------------------|:---:
-GET     | /items | | View all menu items 
-GET     | /items/:itemsId | View one item on menu| 
-PUT     | /items/:itemsId/edit | Edit menu items|
-POST    | / | Add a new menu item |
-DELETE  | /items/:itemsId| Delete a menu item |
-
-## Method | Path  | Purpose | Note
------------|------------------|------------------|:---:
-GET     | /items | | View all menu items 
-GET     | /items/:itemsId | View one item on menu| 
-PUT     | /items/:itemsId/edit | Edit menu items|
-POST    | / | Add a new menu item |
-DELETE  | /items/:itemsId| Delete a menu item |
-
 # User Story
 * AAU I would like to view the menu. I would like to navigate to the different food options. 
 * AAU I would want to be able to choose my preferred food item and add it to checkout. 
